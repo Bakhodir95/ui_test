@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ui_test/models/socialpost.dart';
 import 'package:ui_test/views/screens/profile.dart';
-import 'package:ui_test/views/screens/widgets/profile_pictures_widget.dart';
-import 'package:ui_test/views/screens/widgets/socialpost_widget.dart';
+import 'package:ui_test/views/screens/widgets/profile/profile_pictures_widget.dart';
+import 'package:ui_test/views/screens/widgets/home/socialpost_widget.dart';
 import 'package:ui_test/views/screens/bottomnavi.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,28 +15,30 @@ class HomeScreen extends StatefulWidget {
 class _FirstScreenState extends State<HomeScreen> {
   final List<SocialPost> samplePosts = [
     SocialPost(
-      userAvatar: 'assets/images/profile.png',
+      userAvatar: 'assets/images/profile2.png',
       username: 'Opphen',
       location: 'Brooklyn, NYC',
       imageUrl: 'assets/images/profile.png',
       likedByAvatars: [
+        'assets/images/profile3.png',
         'assets/images/profile.png',
-        'assets/images/profile.png',
-        'assets/images/profile.png',
+        'assets/images/profile2.png',
+        'assets/images/profile1.png',
       ],
       likedByText: 'Isabella',
       likes: 138,
-      isLike: true,
+      isLike: false,
       isBookmarked: false,
     ),
     SocialPost(
-      userAvatar: 'assets/images/profile.png',
+      userAvatar: 'assets/images/profile3.png',
       username: 'Opphen',
       location: 'Brooklyn, NYC',
-      imageUrl: 'assets/images/profile.png',
+      imageUrl: 'assets/design/orange.png',
       likedByAvatars: [
-        'assets/images/profile.png',
-        'assets/images/profile.png',
+        'assets/images/profile1.png',
+        'assets/images/profile2.png',
+        'assets/images/profile3.png',
         'assets/images/profile.png',
       ],
       likedByText: 'Isabella',
@@ -85,7 +87,7 @@ class _FirstScreenState extends State<HomeScreen> {
                     "Cloudy",
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
-                        fontSize: 20,
+                        fontSize: 24,
                         color: Color.fromARGB(255, 130, 4, 193)),
                   ),
                   Row(

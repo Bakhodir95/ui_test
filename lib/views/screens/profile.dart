@@ -41,7 +41,12 @@ class _FirstScreenState extends State<ProfileScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => const HomeScreen()));
+                        },
                         icon: const Icon(Icons.arrow_back_rounded)),
                     const Text(
                       "Tiner Stark",

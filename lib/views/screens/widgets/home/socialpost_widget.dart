@@ -4,7 +4,7 @@ import 'package:ui_test/models/socialpost.dart';
 class SocialFeed extends StatefulWidget {
   final List<SocialPost> posts;
 
-  const SocialFeed({Key? key, required this.posts}) : super(key: key);
+  const SocialFeed({super.key, required this.posts});
 
   @override
   State<SocialFeed> createState() => _SocialFeedState();
@@ -114,54 +114,53 @@ class _SocialFeedState extends State<SocialFeed> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // SizedBox(
-                      //   height: 24,
-                      //   child: Stack(
-                      //     children: [
-                      //       for (var i = 0; i < post.likedByAvatars.length; i++)
-                      //         Positioned(
-                      //           left: i * 16.0,
-                      //           child: Container(
-                      //             decoration: BoxDecoration(
-                      //               shape: BoxShape.circle,
-                      //               border: Border.all(
-                      //                 color: Colors.white,
-                      //                 width: 2,
-                      //               ),
-                      //             ),
-                      //             child: CircleAvatar(
-                      //               radius: 10,
-                      //               backgroundImage: NetworkImage(
-                      //                 post.likedByAvatars[i],
-                      //               ),
-                      //             ),
-                      //           ),
-                      //         ),
-                      //     ],
-                      //   ),
-                      // ),
+                      SizedBox(
+                        height: 25,
+                        width: 100,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: List.generate(4, (index) {
+                            return Positioned(
+                              bottom: 0,
+                              left: index * 14.0,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.white,
+                                    width: 2,
+                                  ),
+                                ),
+                                child: const CircleAvatar(
+                                    radius: 10,
+                                    backgroundImage: AssetImage(
+                                        "assets/images/profile.png")),
+                              ),
+                            );
+                          }),
+                        ),
+                      ),
                       const SizedBox(width: 8),
-                      Expanded(
-                        child: RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: [
-                              TextSpan(
-                                text: 'liked by ',
-                                style: TextStyle(color: Colors.grey[600]),
-                              ),
-                              TextSpan(
-                                text: post.likedByText,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(
-                                text: ' and ${post.likes} more',
-                                style: TextStyle(color: Colors.grey[600]),
-                              ),
-                            ],
-                          ),
+                      RichText(
+                        text: TextSpan(
+                          style: DefaultTextStyle.of(context).style,
+                          children: [
+                            TextSpan(
+                              text: 'liked by ',
+                              style: TextStyle(color: Colors.grey[600]),
+                            ),
+                            TextSpan(
+                              text: post.likedByText,
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            TextSpan(
+                              text: ' and ${post.likes} more',
+                              style: TextStyle(color: Colors.grey[600]),
+                            ),
+                          ],
                         ),
                       ),
                     ],
