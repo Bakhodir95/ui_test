@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui_test/views/screens/first_screen.dart';
+import 'package:ui_test/views/screens/home.dart';
+import 'package:ui_test/views/screens/profile.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,13 +17,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.white,
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: const AppBarTheme(
-          color: Colors.white,
-        ),
+        scaffoldBackgroundColor: const Color.fromARGB(245, 248, 246, 246),
       ),
-      home: const FirstScreen(),
+      home: const HomeScreen(),
     );
   }
 }
